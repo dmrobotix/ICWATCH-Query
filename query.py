@@ -75,6 +75,7 @@ if '--case' in args:
   case = bool(args[idx+1])
 if not key or not string or not match:
   print("Missing search key, string, and/or match, exiting.")
+  print(args)
   exit()
 else:
   print("There's thousands of files, they will take time. Searching...")
