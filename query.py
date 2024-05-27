@@ -31,7 +31,7 @@ my_path = ''
 
 # check if arguments were passed from the user
 if len( args) == 1:
-  print("use --help to get list of commands")
+  print("use -help to get list of commands")
   exit()
 
 # arguments were passed so now handle them
