@@ -46,24 +46,28 @@ if '--searchkeys' in args:
   print(keys_str)
   exit()
 
-if '--dir' in args:
+if '-d' in args:
   # update my_path
-  idx = args.index('--dir')
+  idx = args.index('-d')
+  print(idx)
   my_path = args[idx+1] 
   original_path = my_path + '/ICWATCH-Data/data/original_run'
   second_path = my_path + '/ICWATCH-Data/data/second_set'
 
-if '--key' in args:
+if '-k' in args:
   # save the search key
-  idx = args.index('--key')
+  idx = args.index('-k')
+  print(idx)
   key = args[idx+1]
-if '--string' in args:
+if '-s' in args:
   # save the search string
-  idx = args.index('--string')
+  idx = args.index('-s')
+  print(idx)
   string = args[idx+1]
-if '--match' in args:
+if '-m' in args:
   # save the match condition
-  idx = args.index('--match')
+  idx = args.index('-m')
+  print(idx)
   match = args[idx+1]
 if '--key2' in args:
   # save the second key
