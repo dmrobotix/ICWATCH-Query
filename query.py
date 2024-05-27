@@ -37,7 +37,7 @@ if len( args) == 1:
 # arguments were passed so now handle them
 if '-help' in args:
   # print help
-  help_str = "-help: prints out list of commands\n-d: home directory location for ICWATCH-Data folder (i.e., /home/jynurso/Documents/Code)\n-k: key you want ot search (i.e., name)\n-s: the search string\n-m: the match condition (see pyjsonq's readme for details)\n-searchkeys: returns list of searchable parent keys in ICWATCH files\nsyntax example: python3 query.py -d /home/user/Code -k name -s Saylor -m contains"
+  help_str = "-help: prints out list of commands\n-d: home directory location for ICWATCH-Data folder (i.e., /home/jynurso/Documents/Code)\n-k: key you want to search (i.e., name)\n-s: the search string\n-m: the match condition (see pyjsonq's readme for details)\n-searchkeys: returns list of searchable parent keys in ICWATCH files\nsyntax example: python3 query.py -d /home/user/Code -k name -s Saylor -m contains\n\npyjsonq is an old package so it won't install into the regular python environment. So you must first install the package using pip or pipx. If using pip, then first create a virtual envrionment and activate it as so:\npython3 -m venv .venv\nsource .venv/bin/active\npip3 install py-jsonq\n\nAfter it's installed, you must reactivate the virtual environment with source: .venv/bin/activate.\n\nThe py-jsonq repo has details which -m operators you can use: https://github.com/s1s1ty/py-jsonq."
   print(help_str)
   exit()
 if '-searchkeys' in args:
