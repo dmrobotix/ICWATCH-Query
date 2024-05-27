@@ -76,6 +76,10 @@ if '--case' in args:
 if not key or not string or not match:
   print("Missing search key, string, and/or match, exiting.")
   print(args)
+  print(key)
+  print(string)
+  print(match)
+  print(my_path)
   exit()
 else:
   print("There's thousands of files, they will take time. Searching...")
