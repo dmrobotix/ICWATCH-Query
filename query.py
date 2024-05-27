@@ -26,9 +26,8 @@ key2 = '' # optional only for nested searches
 match = ''
 string = ''
 case = True # set it as case insentive by default
-my_path = '/home/jynurso/Documents/Code'
-original_path = my_path + '/ICWATCH-Data/data/original_run'
-second_path = my_path + '/ICWATCH-Data/data/second_set'
+# my_path = '/home/jynurso/Documents/Code'
+my_path = ''
 
 # check if arguments were passed from the user
 if len( args) == 1:
@@ -51,6 +50,9 @@ if '--dir' in args:
   # update my_path
   idx = args.index('--dir')
   my_path = args[idx+1] 
+  original_path = my_path + '/ICWATCH-Data/data/original_run'
+  second_path = my_path + '/ICWATCH-Data/data/second_set'
+
 if '--key' in args:
   # save the search key
   idx = args.index('--key')
