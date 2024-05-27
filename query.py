@@ -35,21 +35,21 @@ if len( args) == 1:
   exit()
 
 # arguments were passed so now handle them
-if '--help' in args:
+if '-help' in args:
   # print help
-  help_str = "--help: prints out list of commands\n--dir: home directory location for ICWATCH-Data folder (i.e., /home/jynurso/Documents/Code)\n--key: key you want ot search (i.e., name)\n--string: the search string\n--match: the match condition (see pyjsonq's readme for details)\n--searchkeys: returns list of searchable parent keys in ICWATCH files"
+  help_str = "-help: prints out list of commands\n-d: home directory location for ICWATCH-Data folder (i.e., /home/jynurso/Documents/Code)\n-k: key you want ot search (i.e., name)\n-s: the search string\n-m: the match condition (see pyjsonq's readme for details)\n-searchkeys: returns list of searchable parent keys in ICWATCH files\nsyntax example: python3 query.py -d /home/user/Code -k name -s Saylor -m contains"
   print(help_str)
   exit()
-if '--searchkeys' in args:
+if '-searchkeys' in args:
   # return the list of searchable keys
-  keys_str = "['title', 'company', 'start_date', 'end_date', 'linkedin_company_url', 'skills', 'certifications', 'languages', 'name', 'location', 'area', 'industry', 'picture', 'organizations', 'groups', 'education', 'websites', 'profile_url', 'summary', 'current', 'timestamp', 'related_people', 'degree', 'pic_path', 'score']"
+  keys_str = "['title', 'company', 'start_date', 'end_date', 'linkedin_company_url', 'skills', 'certifications', 'languages', 'name', 'location', 'area', 'industry', 'picture', 'organizations', 'groups', 'education', 'websites', 'profile_url', 'summary', 'current', 'timestamp', 'related_people', 'degree', 'pic_path', 'score']\nOnly singular terms work right now with the query package. Next update will fix this issue."
   print(keys_str)
   exit()
 
 if '-d' in args:
   # update my_path
   idx = args.index('-d')
-  print(idx)
+  #print(idx)
   my_path = args[idx+1] 
   original_path = my_path + '/ICWATCH-Data/data/original_run'
   second_path = my_path + '/ICWATCH-Data/data/second_set'
@@ -57,17 +57,17 @@ if '-d' in args:
 if '-k' in args:
   # save the search key
   idx = args.index('-k')
-  print(idx)
+  #print(idx)
   key = args[idx+1]
 if '-s' in args:
   # save the search string
   idx = args.index('-s')
-  print(idx)
+  #print(idx)
   string = args[idx+1]
 if '-m' in args:
   # save the match condition
   idx = args.index('-m')
-  print(idx)
+  #print(idx)
   match = args[idx+1]
 if '--key2' in args:
   # save the second key
@@ -79,11 +79,11 @@ if '--case' in args:
   case = bool(args[idx+1])
 if not key or not string or not match:
   print("Missing search key, string, and/or match, exiting.")
-  print(args)
-  print(key)
-  print(string)
-  print(match)
-  print(my_path)
+  #print(args)
+  #print(key)
+  #print(string)
+  #print(match)
+  #print(my_path)
   exit()
 else:
   print("There's thousands of files, they will take time. Searching...")
@@ -152,5 +152,6 @@ non_empty_results_s = [x for x in results_s if x]
 with open(join(my_path, 'results_second.json'), 'w') as file:
   json.dump(non_empty_results_s, file)
 
-print(count)
-print(count_s)
+print('Search complete. JSON files with results can be found in your -d directory.')
+print('Results from data/original_run folder: ', count)
+print('Results from data/second_set folder: ', count_s)
